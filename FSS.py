@@ -8,9 +8,9 @@ Please note!
 I used AI to change my ORIGINAL version to a serious version.
 My previous version contained food fish and teddies ;-;.
 My previous version was also extremely messy and took 600 lines.
-Also, fish.py was manually edited, I probably could've found a easier way but I couldn't bother.
 I used lists because I'm rusty and messed up and couldn't fix it beca-
 use it was so tangled up. I know. :/    
+
 '''
 
 
@@ -146,7 +146,6 @@ weathers = {
     "Wet"
 }
 
-
 # ============================================================
 # FISHING DIFFICULTY
 # ============================================================
@@ -259,7 +258,70 @@ while True:
 
     command = input("> ").strip().lower()
 
+    if game_time == 6:
+        if weather == "Rainy":
+            fishing_level -= 1
 
+
+        if weather == "Dry":
+            fishing_level+=1
+
+
+        if weather == "Stormy":
+            fishing_level += 1
+            rarity_chances = [
+                65,
+                30,
+                4,
+                0.9,
+                0.1
+            ]
+
+
+        weather = random.choice(weathers)
+
+
+        if weather == "Clear":
+            typewriter1("The sky is clear and luck is increased.")
+            rarity_chances = [
+                60,
+                32,
+                6.3,
+                1.2,
+                0.4
+            ]
+            
+        elif weather == "Rainy":
+            typewriter1("Rainy skies — fish are easier to catch!")
+            fishing_level+=1
+
+        elif weather == "Dry":
+            typewriter1("The dry waters make fish harder to catch today.")
+            fishing_level -=1
+
+        elif weather == "Storm":
+            typewriter1("Rough waters make fishing harder, and luck is against you!")
+            fishing_level -=1
+            rarity_chances = [
+                75,
+                22,
+                2.2,
+                0.5,
+                0.08
+            ]
+
+        elif weather == "Wet":
+            typewriter1("It's a wet day, fishing conditions are normal.")
+
+        else:
+            rarity_chances = [
+                65,
+                30,
+                4,
+                0.9,
+                0.1
+            ]
+             
     # ========================================================
     # RESET TIME AFTER 23:00
     # ========================================================
