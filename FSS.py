@@ -245,6 +245,7 @@ print("zone - Change your fishing zone")
 print("help - View available commands")
 print("pass time - Passes time, doesn't pass weather")
 print("workshop - Visit the workshop at night")
+print("bait - change your bait")
 print("quit - Exit the game")
 typewriter1("")
 player_name = input("What is your name? ")
@@ -1153,6 +1154,7 @@ while True:
         typewriter1("quit - Exit the game")
         typewriter1("pass time - Passes time, doesn't pass weather")
         typewriter1("workshop - Visit the workshop at night")
+        typewriter1("bait - change your bait")
         typewriter1("")
 
 
