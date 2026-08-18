@@ -344,17 +344,21 @@ while True:
         # USE BAIT
         # ----------------------------------------------------
 
-        for bait in item_inventory:
+    if selected_bait is not None:
 
-            if bait in bait_bonus:
+        if selected_bait in item_inventory:
 
-                current_fishing_level += bait_bonus[bait]
+            current_fishing_level += bait_bonus[selected_bait]
 
-                item_inventory.remove(bait)
+            item_inventory.remove(selected_bait)
 
-                print(f"You used {bait}.")
+            print(f"You used {selected_bait}.")
 
-                break
+        else:
+
+            print(f"You don't have any {selected_bait} left.")
+
+            selected_bait = None
 
 
         # ----------------------------------------------------
@@ -1449,7 +1453,66 @@ while True:
 
             typewriter1(
                 "CLOSED - COME BACK TOMORROW"
+
             )
+
+
+    #___________________________________________________________ bait here
+    elif command == "bait":
+
+        print()
+        print("________ BAIT ________")
+
+        available_bait = []
+
+        for item in item_inventory:
+            if item in bait_bonus and item not in available_bait:
+                available_bait.append(item)
+
+        if not available_bait:
+            print("You don't have any bait.")
+            print()
+            continue
+
+        for number, bait in enumerate(available_bait, 1):
+            amount = item_inventory.count(bait)
+
+            print(f"[{number}] {bait} x{amount}")
+
+        print(f"[{len(available_bait) + 1}] No Bait")
+
+        bait_choice = input("> ")
+
+        if bait_choice.isdigit():
+
+            choice = int(bait_choice)
+
+            if 1 <= choice <= len(available_bait):
+
+                selected_bait = available_bait[choice - 1]
+
+                print()
+                print(f"You selected {selected_bait}.")
+
+            elif choice == len(available_bait) + 1:
+
+                selected_bait = None
+
+                print()
+                print("You are no longer using bait.")
+
+            else:
+                print("That's not a bait option.")
+
+        else:
+            print("That's not a bait option.")
+
+
+
+
+
+
+
 
 
     # ========================================================
