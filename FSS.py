@@ -9,14 +9,14 @@ I used AI to change my ORIGINAL version to a serious version.
 My previous version contained food fish and teddies ;-;.
 My previous version was also extremely messy and took 600 lines.
 I used lists because I'm rusty and messed up and couldn't fix it beca-
-use it was so tangled up. :/    
+use it was so tangled up. :/   
+
+Most things are unAIed but typewriter isn't, i took like 15 hours tryna figure it out.
 
 '''
 
 
-# ============================================================
-# GAME VARIABLES
-# ============================================================
+#var/variables
 
 fish_inventory = []
 item_inventory = []
@@ -31,7 +31,7 @@ fishing_level = 1
 
 fishing_zone = "Clear Creek"
 
-# Achievements / quests
+
 koi_achievement = False
 first_quest = False
 
@@ -49,9 +49,7 @@ deepwater_lake_unlocked = False
 weather = "Clear"
 
 
-# ============================================================
-# TYPEWRITER
-# ============================================================
+#i unAIed most of the stuff cause ai sucks but other then that this is ai because i spent 3 hours trying to figure it out
 
 def typewriter(
     text,
@@ -98,9 +96,7 @@ def typewriter1(text, speed=0.05):
     print()
 
 
-# ============================================================
-# TIME
-# ============================================================
+#time, determines whether you can go to workshop or shop or whatevers.
 
 def update_time(game_time):
 
@@ -117,9 +113,7 @@ def update_time(game_time):
         return "Night"
 
 
-# ============================================================
-# RARITIES
-# ============================================================
+#rarities
 
 rarities = [
     "common",
@@ -138,9 +132,7 @@ rarity_chances = [
 ]
 
 
-# ============================================================
-# WEATHER
-# ============================================================
+#weather (effects the luck and stuff)
 
 weathers = [
     "Clear",
@@ -150,9 +142,7 @@ weathers = [
     "Wet"
 ]
 
-# ============================================================
-# FISHING DIFFICULTY
-# ============================================================
+#tackle 
 
 tackle_chances = {
     0: 0,
@@ -163,9 +153,7 @@ tackle_chances = {
 }
 
 
-# ============================================================
-# FISH SELL PRICES
-# ============================================================
+#fish prices at shop
 
 fish_prices = {
     "common": 5,
@@ -176,9 +164,7 @@ fish_prices = {
 }
 
 
-# ============================================================
-# BAIT
-# ============================================================
+#bait
 
 bait_prices = {
     "Minnow Bait": 150,
@@ -194,9 +180,7 @@ bait_bonus = {
 }
 
 
-# ============================================================
-# FISHING ZONES
-# ============================================================
+#zones
 
 zones = [
     "Clear Creek",
@@ -206,19 +190,19 @@ zones = [
 ]
 
 
-# ============================================================
-# FISH DROPS
-# ============================================================
+'''
+drops here #drops here
+'''
 
 fish_drops = {
 
-    # Koi can drop Koi Scales
+  
     "Koi": {
         "item": "Koi Scale",
         "chance": 15
     },
 
-    # Trevally can drop Trevally Fins
+  
     "Trevally": {
         "item": "Trevally Fin",
         "chance": 25
@@ -237,11 +221,8 @@ fish_drops = {
 }
 
 
-# ============================================================
-# INTRO
-# ============================================================
 
-# intro
+# intro well updated intro fr
 typewriter1("After a long walk, you finally reach the river.")
 typewriter1("You stop at the edge of the water and take a look around.")
 typewriter1("The river is wider than you expected, stretching far beyond the trees.")
@@ -261,14 +242,10 @@ print("help - View available commands")
 print("pass time - Passes time, doesn't pass weather")
 print("workshop - Visit the workshop at night")
 print("bait - change your bait")
-print("quit - Exit the game")
+
 typewriter1("")
 player_name = input("What is your name? ")
 
-
-# ============================================================
-# MAIN GAME LOOP
-# ============================================================
 
 while True:
 
@@ -341,27 +318,23 @@ while True:
                 0.1
             ]
              
-    # ========================================================
-    # RESET TIME AFTER 23:00
-    # ========================================================
+   #time reset
 
     if game_time >= 23:
         game_time = 0
         time_period = update_time(game_time)
 
 
-    # ========================================================
-    # FISH
-    # ========================================================
+
+    # fish func
+
 
     if command == "fish" or command == "f":
 
         current_fishing_level = fishing_level
 
 
-        # ----------------------------------------------------
-        # USE BAIT
-        # ----------------------------------------------------
+        #bait
 
     if selected_bait is not None:
 
@@ -380,9 +353,7 @@ while True:
             selected_bait = None
 
 
-        # ----------------------------------------------------
-        # TIME PASSES
-        # ----------------------------------------------------
+            #time 
 
         game_time += 1
 
@@ -392,9 +363,7 @@ while True:
         time_period = update_time(game_time)
 
 
-        # ----------------------------------------------------
-        # CHOOSE RARITY
-        # ----------------------------------------------------
+       #rarity
 
         rarity = random.choices(
             rarities,
@@ -402,9 +371,7 @@ while True:
         )[0]
 
 
-        # ----------------------------------------------------
-        # FIND FISH IN CURRENT ZONE
-        # ----------------------------------------------------
+        #zone fish stuff
 
         matching_fish = [
             f
@@ -416,18 +383,13 @@ while True:
         ]
 
 
-        # ----------------------------------------------------
-        # IF A FISH EXISTS
-        # ----------------------------------------------------
+            #choose random fish
 
         if matching_fish:
 
             chosen_fish = random.choice(matching_fish)
 
-
-            # ------------------------------------------------
-            # ESCAPE TIME
-            # ------------------------------------------------
+            #time till escape
 
             escape_time = max(
                 7,
@@ -440,9 +402,7 @@ while True:
             start_time = time.time()
 
 
-            # ------------------------------------------------
-            # CALCULATE DIFFICULTY
-            # ------------------------------------------------
+            #diff or difficulty
 
             difficulty = (
                 chosen_fish.difficulty
@@ -454,17 +414,14 @@ while True:
                 difficulty = 0
 
 
-            # Make sure difficulty exists
+         
             if difficulty > max(tackle_chances):
                 difficulty = max(tackle_chances)
 
 
             tackle_chance = tackle_chances[difficulty]
 
-
-            # ------------------------------------------------
-            # FISHING MINIGAME
-            # ------------------------------------------------
+            #fishing starting whatevs stuff
 
             progress = 0
 
@@ -472,7 +429,7 @@ while True:
 
             while progress < 100:
 
-                # Fish escapes
+          
                 if time.time() - start_time >= escape_time:
 
                     print("The fish got away!")
@@ -482,7 +439,7 @@ while True:
                     break
 
 
-                # Increase progress
+               
                 progress += random.randint(0, 35)
 
 
@@ -490,7 +447,7 @@ while True:
                     progress = 100
 
 
-                # Fish fights back
+             
                 if random.random() < tackle_chance / 100:
 
                     progress -= random.randint(5, 15)
@@ -499,7 +456,7 @@ while True:
                         progress = 0
 
 
-                # Progress bar
+         
                 filled = progress // 5
 
                 print(
@@ -510,19 +467,17 @@ while True:
                 time.sleep(0.4)
 
 
-            # ------------------------------------------------
-            # SUCCESS
-            # ------------------------------------------------
+            #success in fishing in fish
 
             if fish_away == False:
 
-                # Give the fish a fresh weight
+               
                 caught_weight = random.uniform(
                     chosen_fish.min_weight,
                     chosen_fish.max_weight
                 )
 
-                # Create a separate caught fish object
+              
                 # so different fish can have different weights
                 caught_fish = type(chosen_fish)()
 
@@ -531,19 +486,16 @@ while True:
                 fish_inventory.append(caught_fish)
 
 
-                # --------------------------------------------
-                # CATCH MESSAGE
-                # --------------------------------------------
+                #catch message
 
                 print()
                 print(f"You caught a {caught_fish.name}!")
                 print(f"Weight: {caught_fish.weight:.2f} kg")
                 print(f"Rarity: {caught_fish.rarity}")
 
+                #sure ik i messed up sooooooooo bad here like fr.
 
-                # ============================================
-                # KOI ACHIEVEMENT / FIRST QUEST
-                # ============================================
+                #first quest
 
                 if (
                     caught_fish.name == "Koi"
@@ -562,10 +514,7 @@ while True:
                     print("Return to the workshop when you have enough.")
                     print()
 
-
-                # ============================================
-                # GAR ACHIEVEMENT / SECOND QUEST
-                # ============================================
+                    #you when you can't do it easily and have to manually do it x.x
 
                 if (
                     caught_fish.name == "Gar"
@@ -603,9 +552,7 @@ while True:
                 
 
 
-                # ============================================
-                # FISH DROPS
-                # ============================================
+                #fish drop
 
                 if caught_fish.name in fish_drops:
 
@@ -620,7 +567,7 @@ while True:
                         )
 
 
-            # Reset
+        
             fish_away = False
 
             print()
@@ -636,17 +583,13 @@ while True:
 
             print(f"Time: {game_time}:00")
 
-
-    # ========================================================
-    # INVENTORY
-    # ========================================================
+        #inv or inventory
 
     elif command == "inventory" or command == "i":
 
         fish_counts = {}
 
 
-        # Count fish
         for caught_fish in fish_inventory:
 
             if caught_fish.name in fish_counts:
@@ -711,10 +654,7 @@ while True:
 
         print()
 
-
-    # ========================================================
-    # SHOP
-    # ========================================================
+        #shop
 
     elif command == "shop":
 
@@ -740,9 +680,7 @@ while True:
             shop_choice = input("> ")
 
 
-            # =================================================
-            # BUY BAIT
-            # =================================================
+            #buy bait
 
             if shop_choice == "1":
 
@@ -758,9 +696,7 @@ while True:
                 bait_choice = input("> ")
 
 
-                # ---------------------------------------------
-                # MINNOW BAIT
-                # ---------------------------------------------
+
 
                 if bait_choice == "1":
 
@@ -795,9 +731,6 @@ while True:
                         )
 
 
-                # ---------------------------------------------
-                # BLUE GILL BAIT
-                # ---------------------------------------------
 
                 elif bait_choice == "2":
 
@@ -831,10 +764,6 @@ while True:
                             "but you don't have enough money."
                         )
 
-
-                # ---------------------------------------------
-                # AROWANA BAIT
-                # ---------------------------------------------
 
                 elif bait_choice == "3":
 
@@ -883,9 +812,6 @@ while True:
                     )
 
 
-            # =================================================
-            # SELL FISH
-            # =================================================
 
             elif shop_choice == "2":
 
@@ -941,9 +867,7 @@ while True:
                     sell_choice = input("> ")
 
 
-                    # -----------------------------------------
-                    # LEAVE
-                    # -----------------------------------------
+                    #leave
 
                     if (
                         sell_choice.isdigit()
@@ -955,10 +879,7 @@ while True:
                             "You decide not to sell anything."
                         )
 
-
-                    # -----------------------------------------
-                    # SELL
-                    # -----------------------------------------
+                        # sell
 
                     elif (
                         sell_choice.isdigit()
@@ -988,7 +909,7 @@ while True:
                                 <= fish_counts[chosen_name]
                             ):
 
-                                # Find one fish of that type
+                             
                                 chosen_fish = next(
                                     f
                                     for f in fish_inventory
@@ -1006,7 +927,7 @@ while True:
                                 )
 
 
-                                # Remove fish
+                                
                                 for _ in range(amount):
 
                                     fish_to_remove = next(
@@ -1056,9 +977,6 @@ while True:
                         )
 
 
-            # =================================================
-            # LEAVE SHOP
-            # =================================================
 
             elif shop_choice == "3":
 
@@ -1082,9 +1000,7 @@ while True:
             )
 
 
-    # ========================================================
-    # ZONE
-    # ========================================================
+        #zone
 
     elif command == "zone":
 
@@ -1096,7 +1012,7 @@ while True:
         ]
 
 
-        # Rocky River unlocked
+
         if rocky_river_unlocked:
 
             available_zones.append(
@@ -1104,7 +1020,7 @@ while True:
             )
 
 
-        # Roughwater River unlocked
+
         if roughwater_river_unlocked:
 
             available_zones.append(
@@ -1178,9 +1094,7 @@ while True:
             )
 
 
-    # ========================================================
-    # HELP
-    # ========================================================
+            #help
 
     elif command == "help" or command == "h":
 
@@ -1198,9 +1112,9 @@ while True:
         typewriter1("")
 
 
-    # ========================================================
-    # QUIT
-    # ========================================================
+
+    # nice try
+
 
     elif command == "quit":
 
@@ -1211,9 +1125,9 @@ while True:
         break
 
 
-    # ========================================================
-    # PASS TIME
-    # ========================================================
+
+    # pass time
+
 
     elif command == "pass time":
 
@@ -1238,9 +1152,9 @@ while True:
         )
 
 
-    # ========================================================
-    # WORKSHOP
-    # ========================================================
+
+    # workshop
+
 
     elif command == "workshop":
 
@@ -1264,9 +1178,9 @@ while True:
             workshop_choice = input("> ")
 
 
-            # =================================================
-            # RODS
-            # =================================================
+
+            # rods, not yet done
+
 
             if workshop_choice == "1":
 
@@ -1283,9 +1197,9 @@ while True:
                 print()
 
 
-            # =================================================
-            # QUESTS
-            # =================================================
+
+            # quests
+
 
             elif workshop_choice == "2":
 
@@ -1293,9 +1207,7 @@ while True:
                 print("________ QUESTS ________")
 
 
-                # =============================================
-                # KOI QUEST
-                # =============================================
+
 
                 if first_quest:
 
@@ -1355,9 +1267,7 @@ while True:
                         )
 
 
-                # =============================================
-                # GAR / TREVALly QUEST
-                # =============================================
+
 
                 elif gar_quest:
 
@@ -1462,9 +1372,6 @@ while True:
                         print("Deepwater Lake has been unlocked!")
                         print("Fishing Level +1!")
 
-                # =============================================
-                # NO QUEST
-                # =============================================
 
                 else:
 
@@ -1477,9 +1384,6 @@ while True:
                     )
 
 
-            # =================================================
-            # LEAVE
-            # =================================================
 
             elif workshop_choice == "3":
 
@@ -1488,9 +1392,7 @@ while True:
                 )
 
 
-            # =================================================
-            # INVALID INPUT
-            # =================================================
+
 
             else:
 
@@ -1513,9 +1415,7 @@ while True:
                 )
 
 
-        # ====================================================
-        # WORKSHOP CLOSED
-        # ====================================================
+
 
         else:
 
@@ -1542,7 +1442,7 @@ while True:
             )
 
 
-    #___________________________________________________________ bait here
+    #bait here
     elif command == "bait":
 
         print()
@@ -1597,12 +1497,6 @@ while True:
 
 
 
-
-
-
-    # ========================================================
-    # UNKNOWN COMMAND
-    # ========================================================
 
     else:
 
