@@ -14,10 +14,10 @@ class Fish:
         self.zones = zones
 
 
-class ButterDoggyFish(Fish):
+class MinnowFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Butter Doggy",
+            name = "Minnow",
             difficulty = 1,
             min_weight=0.1,
             max_weight=1.79,
@@ -26,10 +26,10 @@ class ButterDoggyFish(Fish):
         )
 
 
-class ChickyFish(Fish):
+class BlueGillFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Chicky",
+            name = "Blue Gill",
             difficulty = 1,
             min_weight=1.73,
             max_weight=4.8,
@@ -38,10 +38,10 @@ class ChickyFish(Fish):
         )
 
 
-class WhiteteddyFish(Fish):
+class PerchFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Whiteteddy",
+            name = "Perch",
             difficulty = 0, 
             min_weight=0.1,
             max_weight=0.2,
@@ -50,10 +50,10 @@ class WhiteteddyFish(Fish):
         )
 
 
-class DoggyFish(Fish):
+class RoachFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Doggy",
+            name = "Roach",
             difficulty = 1,
             min_weight=2.2,
             max_weight=6.1,
@@ -62,10 +62,10 @@ class DoggyFish(Fish):
         )
 
 
-class WhaleyFish(Fish):
+class KoiFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Whaley",
+            name = "Koi",
             difficulty = 2,
             min_weight=4.8,
             max_weight=10.3,    
@@ -73,10 +73,10 @@ class WhaleyFish(Fish):
             zones = [0]
         )
 
-class TeddyFish(Fish):
+class ArowanaFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Teddy",
+            name = "Arowana",
             difficulty = 2,
             min_weight=9.4,
             max_weight=11.4,
@@ -84,10 +84,10 @@ class TeddyFish(Fish):
             zones = [0]
         )
 
-class MushroomFish(Fish):
+class TroutFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Mushroom",
+            name = "Trout",
             difficulty = 0,
             min_weight=4.1,
             max_weight=10.0,
@@ -95,10 +95,10 @@ class MushroomFish(Fish):
             zones = [1]
         )
 
-class MallowFish(Fish):
+class CarpFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Mallow",
+            name = "Carp",
             difficulty = 2,
             min_weight=6.0,
             max_weight=9.4,
@@ -106,10 +106,10 @@ class MallowFish(Fish):
             zones = [1]
         )
 
-class MrLeastsNuggetFish(Fish):
+class PikeFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Mr Leasts Nuggets",
+            name = "Pike",
             difficulty = 2,
             min_weight=7.2,
             max_weight=10.3,
@@ -117,10 +117,10 @@ class MrLeastsNuggetFish(Fish):
             zones = [1]
         )
 
-class ChickyNuggetFish(Fish):
+class GarFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Chicky Nuggets",
+            name = "Gar",
             difficulty = 3,
             min_weight=7.4,
             max_weight=11.9,
@@ -130,10 +130,10 @@ class ChickyNuggetFish(Fish):
 
 
 
-class BearyTriangleFish(Fish):
+class TrevallyFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Beary Triangle",
+            name = "Trevally",
             difficulty = 4,
             min_weight=11.1,
             max_weight=14.3,
@@ -141,10 +141,10 @@ class BearyTriangleFish(Fish):
             zones = [1]
         )
 
-class ChipFish(Fish):
+class SnapperFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Chip",
+            name = "Snapper",
             difficulty = 4,
             min_weight=11.7,
             max_weight=14.9,
@@ -152,10 +152,10 @@ class ChipFish(Fish):
             zones = [2]
         )
 
-class BurgerFish(Fish):
+class CodFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Burger",
+            name = "Cod",
             difficulty = 4,
             min_weight=12.4,
             max_weight=16.4,
@@ -163,10 +163,10 @@ class BurgerFish(Fish):
             zones = [2]
         )
 
-class PizzaFish(Fish):
+class BarracudaFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Pizza",
+            name = "Barracuda",
             difficulty = 4,
             min_weight=14.8,
             max_weight=20.7,
@@ -174,10 +174,10 @@ class PizzaFish(Fish):
             zones = [2]
         )
 
-class KFCFish(Fish):
+class WahooFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "KFC",
+            name = "Wahoo",
             difficulty = 5,
             min_weight=17.4,
             max_weight=22.3,
@@ -185,10 +185,10 @@ class KFCFish(Fish):
             zones = [2]
         )
 
-class JunkFish(Fish):
+class SwordFishFish(Fish):
     def __init__(self):
         super().__init__(
-            name = "Junk Fish",
+            name = "Swordfish",
             difficulty = 5,
             min_weight=19.3,
             max_weight=24.4,
@@ -196,10 +196,10 @@ class JunkFish(Fish):
             zones = [2],
         )
 
-class EnergyDrinkFish(Fish):
+class MahiMahiFish(Fish):
     def __init__(self):
         super().__init__(
-        name="Energy Drink",
+        name="Mahi-Mahi",
         difficulty=5,
         min_weight=20.3,
         max_weight=25.7,
@@ -208,21 +208,21 @@ class EnergyDrinkFish(Fish):
     )
 
 all_fish = [
-    ButterDoggyFish(),
-    ChickyFish(),
-    WhiteteddyFish(),
-    DoggyFish(),
-    WhaleyFish(),
-    TeddyFish(),
-    MushroomFish(),
-    MallowFish(),
-    MrLeastsNuggetFish(),
-    ChickyNuggetFish(),
-    BearyTriangleFish(),
-    ChipFish(),
-    BurgerFish(),
-    PizzaFish(),
-    KFCFish(),
-    JunkFish(),
-    EnergyDrinkFish(),
+    MinnowFish(),
+    BlueGillFish(),
+    PerchFish(),
+    RoachFish(),
+    KoiFish(),
+    ArowanaFish(),
+    TroutFish(),
+    CarpFish(),
+    PikeFish(),
+    GarFish(),
+    TrevallyFish(),
+    MahiMahiFish(),
+    SwordFishFish(),
+    WahooFish(),
+    BarracudaFish(),
+    CodFish(),
+    SnapperFish(),
 ]
