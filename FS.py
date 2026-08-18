@@ -8,9 +8,9 @@ Please note!
 I used AI to change my ORIGINAL version to a serious version.
 My previous version contained food fish and teddies ;-;.
 My previous version was also extremely messy and took 600 lines.
+Also, fish.py was manually edited, I probably could've found a easier way but I couldn't bother.
 I used lists because I'm rusty and messed up and couldn't fix it beca-
 use it was so tangled up. :/    
-
 '''
 
 
