@@ -35,12 +35,16 @@ fishing_zone = "Clear Creek"
 koi_achievement = False
 first_quest = False
 
-rocky_river_unlocked = False
 
 gar_achievement = False
 gar_quest = False
 
+swordfish_and_mahimahi_achievement = False
+swordfish_quest = True
+
 roughwater_river_unlocked = False
+rocky_river_unlocked = False
+deepwater_lake_unlocked = False
 
 weather = "Clear"
 
@@ -197,7 +201,8 @@ bait_bonus = {
 zones = [
     "Clear Creek",
     "Rocky River",
-    "Roughwater River"
+    "Roughwater River",
+    "Deepwater Lake",
 ]
 
 
@@ -217,7 +222,17 @@ fish_drops = {
     "Trevally": {
         "item": "Trevally Fin",
         "chance": 25
-    }
+    },
+
+    "Mahi-Mahi": {
+        "item": "River Pearl",
+        "chance": 50
+    },
+
+    "Swordfish": {
+        "item": "Sword",
+        "chance": 15
+    },
 
 }
 
@@ -258,6 +273,9 @@ player_name = input("What is your name? ")
 while True:
 
     command = input("> ").strip().lower()
+
+    if deepwater_lake_unlocked:
+        print("Yo guys there is a legendary here fr fr go get it mannnnn.")
 
     if game_time == 6:
         if weather == "Rainy":
@@ -565,6 +583,24 @@ while True:
                     print("Collect 1 Trevally Fin.")
                     print("Return to the workshop when you have enough.")
                     print()
+
+                if ( 
+                    caught_fish.name == "Swordfish"
+                    and not swordfish_and_mahimahi_achievement
+                ):
+                    print("________ QUEST UNLOCKED _______")
+                    print("Collect a sword and a River Pearl.")
+                    print("Collect them from a Swordfish and a Mahi-Mahi")
+                    print("Return to the workshop when you have enough.")
+
+                    swordfish_and_mahimahi_achievement = True
+                    swordfish_quest = True
+
+                elif caught_fish.name == "Saccopharynx":
+                    typewriter("Wow........ You actually went through all of that trouble to get the legendary..... Congratulations."
+                    "You wasted like 3 hours of your life..... Unless you were really lucky. Great."
+                    "Now I have to make more stuff. :////")
+                
 
 
                 # ============================================
@@ -1076,6 +1112,10 @@ while True:
             )
 
 
+        if deepwater_lake_unlocked:
+            available_zones.append("Deepwater Lake")
+
+
         for number, zone in enumerate(
             available_zones,
             1
@@ -1324,7 +1364,7 @@ while True:
                     print()
                     print(
                         "________ "
-                        "TREVALly QUEST ________"
+                        "TREVALLY QUEST ________"
                     )
 
                     print(
@@ -1345,12 +1385,12 @@ while True:
                     )
 
 
-                    if trevally_fin_count >= 1:
+                    if trevally_fin_count >= 3:
 
                         print()
 
                         typewriter(
-                            "A Trevally Fin... finally. "
+                            "Trevally Fins... finally. "
                             "Hand it over."
                         )
 
@@ -1359,6 +1399,13 @@ while True:
                             "Trevally Fin"
                         )
 
+                        item_inventory.remove(
+                            "Trevally Fin"
+                        )
+
+                        item_inventory.remove(
+                            "Trevally Fin"
+                        )
 
                         gar_quest = False
 
@@ -1378,6 +1425,42 @@ while True:
                             "Fishing Level +1!"
                         )
 
+
+                elif mahi_mahi_quest:
+
+                    print()
+                    print("________ SWORD & RIVER PEARL QUEST ________")
+
+                    print("Collect 1 Sword and 1 River Pearl.")
+                    print("Return to the workshop when you have both.")
+
+                    sword_count = item_inventory.count("Sword")
+                    river_pearl_count = item_inventory.count("River Pearl")
+
+                    print(f"Sword: {sword_count}/1")
+                    print(f"River Pearl: {river_pearl_count}/1")
+
+                    if sword_count >= 1 and river_pearl_count >= 1:
+
+                        print()
+
+                        typewriter1(
+                            "Wait what!? "
+                            "A sword? How'd you get that?"
+                        )
+
+                        item_inventory.remove("Sword")
+                        item_inventory.remove("River Pearl")
+
+                        mahi_mahi_quest = False
+                        deepwater_lake_unlocked = True
+
+                        fishing_level += 1
+
+                        print()
+                        print("QUEST COMPLETE!")
+                        print("Deepwater Lake has been unlocked!")
+                        print("Fishing Level +1!")
 
                 # =============================================
                 # NO QUEST
