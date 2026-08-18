@@ -267,7 +267,7 @@ while True:
             fishing_level+=1
 
 
-        if weather == "Stormy":
+        if weather == "Storm":
             fishing_level += 1
             rarity_chances = [
                 65,
