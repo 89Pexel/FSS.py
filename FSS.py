@@ -531,7 +531,7 @@ while True:
                     print("You caught a Gar!")
                     print()
                     print("________ QUEST UNLOCKED ________")
-                    print("Collect 1 Trevally Fin.")
+                    print("Collect 3 Trevally Fin.")
                     print("Return to the workshop when you have enough.")
                     print()
 
