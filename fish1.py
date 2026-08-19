@@ -207,6 +207,87 @@ class MahiMahiFish(Fish):
         zones=[2]
     )
 
+class KillifishFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Killifish",
+            difficulty = 6,
+            min_weight = 19.8,
+            max_weight = 28.4,
+            rarity = "common",
+            zones=[3]
+    )
+
+class BitterlingFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Bitterling",
+            difficulty = 6,
+            min_weight = 20.4,
+            max_weight = 29.7,
+            rarity = "common",
+            zones = [3]
+        )
+
+class SticklebackFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Stickleback",
+            difficulty = 6,
+            min_weight = 24.7,
+            max_weight = 27.4,
+            rarity = "common",
+            zones = [3]
+    )
+
+
+class ChimaeraFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Chimaera",
+            difficulty = 6,
+            min_weight = 25.9,
+            max_weight = 27.4,
+            rarity = "uncommon",
+            zones = [3]
+        )
+
+
+class ThaumatichthysFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Thaumatichthys",
+            difficulty = 7,
+            min_weight = 29.6,
+            max_weight = 34.4,
+            rarity = "rare",
+            zones = [3]
+        )
+
+class EurypharynxFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Eurypharynx",
+            difficulty = 7,
+            min_weight = 32.9,
+            max_weight = 35.9,
+            rarity = "epic",
+            zones = [3]
+        )
+
+
+class SaccopharynxFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Saccopharynx",
+            difficulty = 8,
+            min_weight = 57.9,
+            max_weight = 99.9,
+            rarity = "legendary",
+            zones = [3]
+        )
+
+
 all_fish = [
     MinnowFish(),
     BlueGillFish(),
