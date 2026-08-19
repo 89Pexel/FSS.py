@@ -7,7 +7,7 @@ import fish1
 Please note!
 I used AI to change my ORIGINAL version to a serious version.
 My previous version contained food fish and teddies ;-;.
-My previous version was also extremely messy and took 600 lines.
+My previous version was also extremely messy and took 2569 lines of code (it only had 3 zones).
 I used lists because I'm rusty and messed up and couldn't fix it beca-
 use it was so tangled up. :/   
 
@@ -301,8 +301,8 @@ while True:
             typewriter1("Rough waters make fishing harder, and luck is against you!")
             fishing_level -=1
             rarity_chances = [
-                75,
-                22,
+                75.2,
+                24,
                 2.2,
                 0.5,
                 0.08
