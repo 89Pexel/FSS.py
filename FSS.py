@@ -40,13 +40,15 @@ gar_achievement = False
 gar_quest = False
 
 swordfish_and_mahimahi_achievement = False
-swordfish_quest = True
+mahi_mahi_quest = True
 
 roughwater_river_unlocked = False
 rocky_river_unlocked = False
 deepwater_lake_unlocked = False
 
 weather = "Clear"
+
+selected_bait = None
 
 
 #i unAIed most of the stuff cause ai sucks but other then that this is ai because i spent 3 hours trying to figure it out
@@ -336,21 +338,21 @@ while True:
 
         #bait
 
-    if selected_bait is not None:
+        if selected_bait is not None:
 
-        if selected_bait in item_inventory:
+            if selected_bait in item_inventory:
 
-            current_fishing_level += bait_bonus[selected_bait]
+                current_fishing_level += bait_bonus[selected_bait]
 
-            item_inventory.remove(selected_bait)
+                item_inventory.remove(selected_bait)
 
-            print(f"You used {selected_bait}.")
+                print(f"You used {selected_bait}.")
 
-        else:
+            else:
 
-            print(f"You don't have any {selected_bait} left.")
+                print(f"You don't have any {selected_bait} left.")
 
-            selected_bait = None
+                selected_bait = None
 
 
             #time 
@@ -1278,7 +1280,7 @@ while True:
                     )
 
                     print(
-                        "Bring me 1 Trevally Fin."
+                        "Bring me 3 Trevally Fin."
                     )
 
 
