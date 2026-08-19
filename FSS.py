@@ -1293,7 +1293,7 @@ while True:
 
                     print(
                         f"Progress: "
-                        f"{trevally_fin_count}/1"
+                        f"{trevally_fin_count}/3"
                     )
 
 
