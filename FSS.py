@@ -46,7 +46,7 @@ roughwater_river_unlocked = False
 rocky_river_unlocked = False
 deepwater_lake_unlocked = False
 
-weather = "Clear"
+weather = "Clear"  # start on clear otherwise the change will not be permanent
 
 selected_bait = None
 
@@ -252,6 +252,14 @@ player_name = input("What is your name? ")
 while True:
 
     command = input("> ").strip().lower()
+
+    rarity_chances = [
+    65,
+    30,
+    4,
+    0.9,
+    0.1
+    ]
 
     if deepwater_lake_unlocked:
         print("Yo guys there is a legendary here fr fr go get it mannnnn.")
@@ -545,7 +553,6 @@ while True:
                     print("Return to the workshop when you have enough.")
 
                     swordfish_and_mahimahi_achievement = True
-                    swordfish_quest = True
 
                 elif caught_fish.name == "Saccopharynx":
                     typewriter("Wow........ You actually went through all of that trouble to get the legendary..... Congratulations."
