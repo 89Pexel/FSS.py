@@ -47,9 +47,20 @@ roughwater_river_unlocked = False
 rocky_river_unlocked = False
 deepwater_lake_unlocked = False
 
-weather = "Clear"  # start on clear otherwise the change will not be permanent
+weather = "Clear"  # start on clear otherwise the change will be permanent
 
 selected_bait = None
+
+not_allowed_names = [
+    "poo",
+    "idiot",
+    "who added a filter"
+    "crap"
+    "thomas crapper"
+    "ned kelly"
+    "ned kelly appreciation club" # (just some troll thing that i like to be annoying or whatever)
+    "pooo"
+]
 
 
 #i unAIed most of the stuff cause ai sucks but other then that this is ai because i spent 3 hours trying to figure it out
@@ -254,7 +265,24 @@ print("workshop - Visit the workshop at night")
 print("bait - change your bait")
 
 typewriter1("")
-player_name = input("What is your name? ")
+player_name = input("What is your name? ").strip()
+
+if player_name in not_allowed_names:
+    typewriter1("Nah man nah")
+    sys.exit()
+
+elif player_name == "":
+    typewriter1("You meant something else? Well sorry your name can't be blank.")
+    sys.exit()
+
+elif len(player_name) in (1, 2):
+    typewriter1("Ur name is too short x.x restart man")
+    sys.exit()
+
+elif len(player_name) > 15:
+    typewriter1("I recommend that you don't put your full name because when you go to shop x.x.")
+    typewriter1("Also if you are trolling and putting a really long name go to shop :D.")
+
 
 
 while True:
@@ -1126,24 +1154,10 @@ while True:
         typewriter1("shop - Visit the shop")
         typewriter1("zone - Change your fishing zone")
         typewriter1("help - View available commands")
-        typewriter1("quit - Exit the game")
         typewriter1("pass time - Passes time, doesn't pass weather")
         typewriter1("workshop - Visit the workshop at night")
         typewriter1("bait - change your bait")
         typewriter1("")
-
-
-
-    # nice try
-
-
-    elif command == "quit":
-
-        print(
-            "You can't Alt F4 life."
-        )
-
-        break
 
 
 
