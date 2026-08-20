@@ -287,6 +287,83 @@ class SaccopharynxFish(Fish):
             zones = [3]
         )
 
+class IdiacanthusFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Idiacanthus",
+            difficulty = 8,
+            min_weight = 64.0,
+            max_weight = 69.8,
+            rarity = "common",
+            zones = [4]
+        )
+
+class MelanocetusFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Melanocetus",
+            difficulty = 8,
+            min_weight = 65.9,
+            max_weight = 70.3,
+            rarity = "common",
+            zones = [4]
+        )
+
+
+class OneirodesFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Oneirodes",
+            difficulty = 8,
+            min_weight = 67.4,
+            max_weight = 71.9,
+            rarity = "common",
+            zones = [4]
+        )
+
+class LipophryneFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Lipophryne",
+            difficulty = 9,
+            min_weight = 69.4,
+            max_weight = 71.9,
+            rarity = "uncommon",
+            zones = [4]
+        )
+
+class CeratiodesFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Ceratioides",
+            difficulty = 9,
+            min_weight = 71.4,
+            max_weight = 73.9,
+            rarity = "rare",
+            zones = [4]
+        )
+
+class DiceratiidaeFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Diceratiidae",
+            difficulty = 9,
+            min_weight = 82.4,
+            max_weight = 84.9,
+            rarity = "epic",
+            zones = [4]
+        )
+
+class MelanocetidaeFish(Fish):
+    def __init__(self):
+        super().__init__(
+            name = "Melanocetidae",
+            difficulty = 10,
+            min_weight = 81.9,
+            max_weight = 83.2,
+            rarity = "epic",
+            zones = [4]
+        )
 
 
 
@@ -314,5 +391,12 @@ all_fish = [
     ChimaeraFish(),
     ThaumatichthysFish(),
     EurypharynxFish(),
-    SaccopharynxFish()
+    SaccopharynxFish(),
+    IdiacanthusFish(),
+    MelanocetusFish(),
+    OneirodesFish(),
+    LipophryneFish(),
+    CeratiodesFish(),
+    DiceratiidaeFish(),
+    MelanocetidaeFish(),
 ]
