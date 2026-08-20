@@ -2,6 +2,7 @@ import time
 import sys
 import random
 import fish1
+import msvcrt
 
 '''
 Please note!
@@ -53,6 +54,10 @@ selected_bait = None
 
 #i unAIed most of the stuff cause ai sucks but other then that this is ai because i spent 3 hours trying to figure it out
 
+def clear_input():
+    while msvcrt.kbhit():
+        msvcrt.getwch()
+
 def typewriter(
     text,
     base_speed=0.04,
@@ -87,6 +92,7 @@ def typewriter(
                 time.sleep(0.01)
 
     print()
+    clear_input() 
 
 
 def typewriter1(text, speed=0.05):
@@ -96,6 +102,7 @@ def typewriter1(text, speed=0.05):
         time.sleep(speed)
 
     print()
+    clear_input() 
 
 
 #time, determines whether you can go to workshop or shop or whatevers.
@@ -583,6 +590,7 @@ while True:
             print()
             print(f"Time: {game_time}:00")
             print(f"Time period: {time_period}")
+            clear_input()
 
 
         else:
