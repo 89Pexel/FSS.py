@@ -189,6 +189,7 @@ zones = [
     "Rocky River",
     "Roughwater River",
     "Deepwater Lake",
+    "Blindwater Sea",
 ]
 
 
@@ -261,8 +262,7 @@ while True:
     0.1
     ]
 
-    if deepwater_lake_unlocked:
-        print("Yo guys there is a legendary here fr fr go get it mannnnn.")
+
 
     if game_time == 6:
         if weather == "Rainy":
@@ -555,9 +555,10 @@ while True:
                     swordfish_and_mahimahi_achievement = True
 
                 elif caught_fish.name == "Saccopharynx":
-                    typewriter("Wow........ You actually went through all of that trouble to get the legendary..... Congratulations."
-                    "You wasted like 3 hours of your life..... Unless you were really lucky. Great."
-                    "Now I have to make more stuff. :////")
+                    typewriter1("You caught a Legendary Saccopharynx!")
+                    typewriter1("This fish is extremely rare.")
+                    nextyzone = True
+                    typewriter1("A new sea is unlocked!")
                 
 
 
@@ -1039,6 +1040,9 @@ while True:
 
         if deepwater_lake_unlocked:
             available_zones.append("Deepwater Lake")
+
+            if nextyzone:
+                available_zones.append("Blindwater Sea")
 
 
         for number, zone in enumerate(
