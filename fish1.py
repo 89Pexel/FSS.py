@@ -288,6 +288,8 @@ class SaccopharynxFish(Fish):
         )
 
 
+
+
 all_fish = [
     MinnowFish(),
     BlueGillFish(),
@@ -306,4 +308,11 @@ all_fish = [
     BarracudaFish(),
     CodFish(),
     SnapperFish(),
+    KillifishFish(),
+    BitterlingFish(),
+    SticklebackFish(),
+    ChimaeraFish(),
+    ThaumatichthysFish(),
+    EurypharynxFish(),
+    SaccopharynxFish()
 ]
