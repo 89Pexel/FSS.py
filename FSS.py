@@ -1198,7 +1198,7 @@ while True:
             or time_period == "Night"
         ):
 
-            typewriter(
+            typewriter1(
                 "Yeah, yeah... you're here. "
                 "What do you want?"
             )
@@ -1224,7 +1224,7 @@ while True:
                 print("Nothing here yet.")
                 print()
 
-                typewriter(
+                typewriter1(
                     "Come back when I've actually "
                     "got something to sell."
                 )
@@ -1272,7 +1272,7 @@ while True:
 
                         print()
 
-                        typewriter(
+                        typewriter1(
                             "Hmph. You actually brought me "
                             "the Koi Scales."
                         )
@@ -1334,7 +1334,7 @@ while True:
 
                         print()
 
-                        typewriter(
+                        typewriter1(
                             "Trevally Fins... finally. "
                             "Hand it over."
                         )
@@ -1413,7 +1413,7 @@ while True:
                     print()
                     print("No quests available.")
 
-                    typewriter(
+                    typewriter1(
                         "Come back when you've "
                         "actually done something."
                     )
@@ -1422,7 +1422,7 @@ while True:
 
             elif workshop_choice == "3":
 
-                typewriter(
+                typewriter1(
                     "Finally. Now get out of here."
                 )
 
@@ -1436,15 +1436,15 @@ while True:
                     "The old man stares at you."
                 )
 
-                typewriter(
+                typewriter1(
                     '"What?"'
                 )
 
-                typewriter(
+                typewriter1(
                     "He squints."
                 )
 
-                typewriter(
+                typewriter1(
                     "I haven't got a clue "
                     "what you're on about, mate."
                 )
